@@ -31,7 +31,7 @@ const deletePhoto=asyncHandler(async(req,res)=>{
    const {id}=req.params;
    const photo=await favoritePhotos.findByIdAndDelete(id);
    res.status(200).json({photo});
-})
+}) 
 
 module.exports={
    postPhoto,
