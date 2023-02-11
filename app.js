@@ -2,6 +2,7 @@ require('dotenv').config();
 const express=require('express');
 const photoRoute=require('./routes/photoRoutes');
 const authRouter=require('./routes/userRoutes');
+const photosRouter=require('./routes/favoritesRoutes');
 const connectDB=require('./config/db');
 const mongoose=require('mongoose')
 
@@ -14,6 +15,7 @@ app.get('/',(req,res)=>{
 })
 app.use('/api/photos',photoRoute);
 app.use('/api/auth',authRouter);
+app.use('/api/favoritePhotos',photosRouter);
 
 mongoose.connection.on('disconnected',()=>console.log('Disconnected form DB'));
 mongoose.set('strictQuery',false);
