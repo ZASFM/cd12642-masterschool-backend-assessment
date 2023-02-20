@@ -6,12 +6,18 @@ const favoritePhotosSchema=new mongoose.Schema({
       ref:'User'
    },
    url:{
-      type:String
+      type:String,
+      required:true
    },
    description:{
-      type:String
+      type:String,
+      required:true
    },
    username:{
+      type:String,
+      required:true,
+   },
+   explanation:{
       type:String
    }
 },{
